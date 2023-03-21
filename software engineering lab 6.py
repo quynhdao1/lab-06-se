@@ -8,8 +8,6 @@ def encode(input):
         result += str((tempnum + 3))  # each individual decimal added to the result to get the result
     return result
 
-def decode():
-    pass
 
 
 if __name__ == "__main__":
@@ -32,13 +30,27 @@ if __name__ == "__main__":
             # “12345555” will become “45678888” after encoding.
             # “00009962” with become “33332295” after encoding.
             password_input = str(input("Please enter your password to encode: "))
-            password_input = encode(password_input)
+            encodedpass = encode(password_input)
 
 
 
 
-        elif menu_selection == 2: # subtracts 3 to each integer in the numeric string
-            encoded_string = encode(numeric_input)
-            print(f"The encoded password is {encoded_string}, and the original password is {numeric_input}.")
+
+        elif menu_selection == 2:  # subtracts 3 to each integer in the numeric string
+
+            num_loops = len(encodedpass)
+
+            place_value = 0
+
+            decoded_password = ''
+
+            while num_loops > 0:
+                decoded_password += str(int(encodedpass[place_value]) - 3)
+
+                num_loops -= 1
+
+                place_value += 1
+
+            print(f'The encoded password is {encodedpass}, and the original password is {decoded_password}')
 
 
