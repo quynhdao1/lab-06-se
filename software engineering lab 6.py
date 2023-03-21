@@ -2,9 +2,10 @@
 # hey
 def encode(input):
     result = ""
-    for num in input:  # for loop i in the given input
-           num += 3# i put through decimal to hex method
-        result.append(num)  # each individual decimal added to the result to get the result
+    tempnum = 0
+    for i in range(0, len(input)):  # for loop i in the given input
+        tempnum = int(input[i])
+        result += str((tempnum + 3))  # each individual decimal added to the result to get the result
     return result
 
 def decode():
@@ -14,7 +15,7 @@ def decode():
 if __name__ == "__main__":
     program = 1
 
-    while program != 1:
+    while program == 1:
         print("Menu")
         print("-------------")
         print("1. Encode")
@@ -29,8 +30,10 @@ if __name__ == "__main__":
 
         elif menu_selection == 1: # adds 3 to each integer in the numeric string
             # “12345555” will become “45678888” after encoding.
-            # “00009962” will become “33332295” after encoding.
-            password_input = int(input("Please enter your password to encode:"))
+            # “00009962” with become “33332295” after encoding.
+            password_input = str(input("Please enter your password to encode: "))
+            password_input = encode(password_input)
+
 
 
 
