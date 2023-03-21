@@ -1,5 +1,5 @@
 # quynh dao
-
+# hey
 def encode(input):
     result = ""
     for num in input:  # for loop i in the given input
